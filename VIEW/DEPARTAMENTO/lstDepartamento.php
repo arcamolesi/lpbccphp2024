@@ -1,7 +1,7 @@
 <?php
-    include 'conexao.php';
+    include_once 'C:\xampp\htdocs\lpbccphp2024\DAL\conexao.php';
     $sql = "select * from departamento;";
-    $con = Conexao::conectar(); 
+    $con = \DAL\Conexao::conectar(); 
     $registros = $con->query($sql); 
 ?>
 

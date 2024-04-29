@@ -1,11 +1,11 @@
 <?php
    //exmplo de acesso a dados usando POO por meio
    //de uma classe Model e gerando lista de 
-  include_once 'conexao.php';
-  include_once './MODEL/Departamento.php';
+   include_once 'C:\xampp\htdocs\lpbccphp2024\DAL\conexao.php';
+  include_once 'C:\xampp\htdocs\lpbccphp2024\MODEL\Departamento.php';
   
   $sql = "Select * from departamento;"; 
-  $con = Conexao::conectar(); 
+  $con = \DAl\Conexao::conectar(); 
   $registros = $con->query($sql);
   
   foreach ($registros as $linha){
