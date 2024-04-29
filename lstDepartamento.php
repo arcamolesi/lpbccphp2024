@@ -2,7 +2,7 @@
     include 'conexao.php';
     $sql = "select * from departamento;";
     $con = Conexao::conectar(); 
-    $lstDpto = $con->query($sql); 
+    $registros = $con->query($sql); 
 ?>
 
 <!DOCTYPE html>
@@ -20,10 +20,10 @@
             <th>Descrição</th>
         </tr>
         
-        <?php foreach($lstDpto as $dpto) {?>
+        <?php foreach($registros as $linha) {?>
            <tr>
-              <td> <?php echo $dpto['id']; ?> </td>
-              <td> <?php echo $dpto['descricao']?> </td>
+              <td> <?php echo $linha['id']; ?> </td>
+              <td> <?php echo $linha['descricao']?> </td>
            </tr>
         <?php } ?>
     </table>

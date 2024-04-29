@@ -6,12 +6,14 @@
   
   $sql = "Select * from departamento;"; 
   $con = Conexao::conectar(); 
-  $dados = $con->query($sql);
+  $registros = $con->query($sql);
   
-  foreach ($dados as $linha){
-      $dpto = new \MODEL\Departamento(); 
+  foreach ($registros as $linha){
+      $dpto = new \MODEL\Departamento();
+
       $dpto->setId($linha['id']); 
       $dpto->setDescricao($linha['descricao']);
+      
       $lstDpto[] = $dpto; 
   }
    
