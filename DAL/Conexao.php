@@ -26,7 +26,8 @@
     }
 
     public static function desconectar (){
-        self::$cont = null; 
+        self::$cont = null;
+        return self::$cont;  
     }
 
    }
