@@ -28,6 +28,17 @@ class Equipamento
         return $lstEqpto;
     }
 
+    public function Insert(\MODEL\Equipamento $equipamento){
+        $sql = "INSERT INTO equipamento (descricao, responsavel, departamento, compra) VALUES ('{$equipamento->getDescricao()}', '{$equipamento->getResponsavel()}', '{$equipamento->getDepartamento()}', '{$equipamento->getCompra()}');";
+
+        $con = Conexao::conectar();
+        $result = $con->query($sql);
+        $con = Conexao::desconectar();
+        return $result;
+
+        //echo "Descricao: " . $equipamento->getDescricao() . "<br/><br/>";
+       // echo "Responsável: " . $equipamento->getResponsavel() . "<br/><br/>";
+    }
 
 
 }

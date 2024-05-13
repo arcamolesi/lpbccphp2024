@@ -24,20 +24,20 @@
         </div>
         <div class="row  black-text">
             <form action="insEqpto.php" method="POST" class="col s12">
-                <div class="input-field col s8">
-                    <input placeholder="informe descrição do equipamento" id="descricao" type="text" class="validate">
+                <div class="input-field col s8 black-red">
+                    <input placeholder="informe descrição do equipamento" id="descricao" type="text" class="validate" name="txtDesc">
                     <label for="descricao">Descrição</label>
                 </div>
                 <div class="input-field col s8">
-                    <input placeholder="informe o responsáve" id="responsavel" type="text" class="validate">
+                    <input placeholder="informe o responsáve" id="responsavel" type="text" class="validate" name="txtResp">
                     <label for="responsavel">Responsável</label>
                 </div>
                 <div class="input-field col s5">
-                    <input placeholder="informe departamento" id="departamento" type="number" class="validate">
+                    <input placeholder="informe departamento" id="departamento" type="number" class="validate" name="txtDep">
                     <label for="departamento">Departamento</label>
                 </div>
                 <div class="input-field col s8">
-                    <input placeholder="informe data da compra" id="compra" type="date" class="validate">
+                    <input placeholder="informe data da compra" id="compra" type="date" class="validate" name="txtCompra">
                     <label for="compra">Compra</label>
                 </div>
 
