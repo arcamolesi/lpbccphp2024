@@ -35,5 +35,14 @@ class Equipamento
     }
 
 
+    public function Delete (int $id) {
+        $dalEqpto = new \DAL\Equipamento();   
+
+        ///regras de negócio que dependem do sistema propoto 
+        
+        return $dalEqpto->Delete($id);
+    }
+
+
 }
 ?>

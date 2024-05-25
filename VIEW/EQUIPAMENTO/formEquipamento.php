@@ -1,43 +1,61 @@
+<?php include_once 'C:\xampp\htdocs\lpbccphp2024\BLL\Departamento.php';?>
+
 <!DOCTYPE html>
 <html lang="pt-Br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
     <title>Inserir Equipamentos</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="../js/init.js"></script>
+    
+
+
 </head>
 
 <body>
+    <?php include_once '../menu.php'; ?>
     <div class="container indigo lighten-4 deep-orange-text col s12">
         <div class="center green">
             <h1>Inserir Equipamento</h1>
         </div>
         <div class="row  black-text">
             <form action="insEqpto.php" method="POST" class="col s12">
-                <div class="input-field col s8 black-red">
-                    <input placeholder="informe descrição do equipamento" id="descricao" type="text" class="validate" name="txtDesc">
-                    <label for="descricao">Descrição</label>
-                </div>
                 <div class="input-field col s8">
-                    <input placeholder="informe o responsáve" id="responsavel" type="text" class="validate" name="txtResp">
+                    <input placeholder="informe descrição do equipamento" id="descricao" name="txtDesc" type="text"
+                        class="validate">
+                    <label id="banana" for="descricao">Descrição</label>
+                </div>
+
+                <div class="input-field col s8">
+                    <input placeholder="informe o responsáve" id="responsavel" name="txtResp" type="text"
+                        class="validate">
                     <label for="responsavel">Responsável</label>
                 </div>
+
                 <div class="input-field col s5">
-                    <input placeholder="informe departamento" id="departamento" type="number" class="validate" name="txtDep">
-                    <label for="departamento">Departamento</label>
+
+                    <select name="slcDep">
+                        <option value="" disabled selected>Escolha um Departamento</option>
+                        <?php
+                        $bllDpto = new BLL\Departamento();
+                        $lstDpto = $bllDpto->Select(); 
+
+                        foreach ($lstDpto as $dpto) { ?>
+                            <option value="<?php echo $dpto->getID(); ?>">
+                                <?php echo $dpto->getDescricao(); ?>
+                            </option>
+                        <?php } ?>
+                    </select>
+                    <label>Informe o Departamento</label>
                 </div>
-                <div class="input-field col s8">
-                    <input placeholder="informe data da compra" id="compra" type="date" class="validate" name="txtCompra">
+
+
+                <div class="input-field col s5">
+                    <input placeholder="informe data da compra" id="compra" name="txtCompra" type="date"
+                        class="validate">
                     <label for="compra">Compra</label>
                 </div>
 
@@ -49,7 +67,8 @@
                     <button class="waves-effect waves-light btn red" type="reset">
                         Limpar <i class="material-icons">clear_all</i>
                     </button>
-                    <button class="waves-effect waves-light btn blue" type="button" onclick="JavaScript:location.href='lstEquipamento.php'">
+                    <button class="waves-effect waves-light btn blue" type="button"
+                        onclick="JavaScript:location.href='lstEquipamento.php'">
                         Voltar <i class="material-icons">arrow_back</i>
                     </button>
                     <br>
