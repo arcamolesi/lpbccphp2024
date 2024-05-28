@@ -1,4 +1,5 @@
-<?php
+
+
 include_once 'C:\xampp\htdocs\lpbccphp2024\BLL\Equipamento.php';
 use BLL\Equipamento;
 
